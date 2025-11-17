@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<style>
+#ball
+{background-color: burlywood;
+ height: 10"px";
+ width: 10 "px";
+
+
+
+}
+</style>
+
+
+</head>
+<body>
+<div
+id="ball">
+
+</div>
+
+<script type="text/javascript">
+	
+document.addEventListener("mousemove", function(event){console.log(event.clientX, event.clientY)
+    ball.style.left=event.clientX + "px"
+    ball.style.top=event.clientY + "px"
+
+
+})
+</script>
+
+</body>
+</html>
