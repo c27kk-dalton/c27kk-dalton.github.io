@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+
+	<style type="text/css">
+		
+		.bballs{
+			width:100px;
+			height:100px;
+			background-color:orange;
+			border-radius: 50%;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<center>Happy Holidays! I love you this many basketballs</center>
+	<!-- <div id=bball></div> -->
+
+		<script type="text/javascript">
+
+		function makeBball (){
+			let ball = document.createElement("div")
+			ball.classList.add("bballs")
+			document.body.appendChild(ball)
+
+		}
+
+		// makeBball();
+
+		// setInterval(makeBball, 1000)
+
+
+document.addEventListener("click", makeBball)
+
+</script>
+
+</body>
+</html>
