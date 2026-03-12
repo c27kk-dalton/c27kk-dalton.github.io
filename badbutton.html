@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+<style>
+	#button{
+position: absolute;
+	}
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+<button id="button">you can't click me</button>
+
+<script>
+	let button = document.getElementById("button")
+	console.log(button)
+    button.addEventListener("click", function() {
+      console.log("click!")
+    }) 
+    
+    button.addEventListener("mouseover", function() {
+      console.log("mouse is hovering")
+    button.style.top = Math.random() * 750 + "px"
+    button.style.left = Math.random() * 1000 + "px"
+    innerWidth + "px"
+    button.style.transform = "scale(-1,1)"
+    button.style.fontSize = Math.random()*50 + "px"
+    }) 
+
+button.addEventListener("mouseout", function() {
+      console.log("mouse leaves")
+      button.style.transform = "scale(1,1)"
+    }) 
+
+
+
+
+
+</script>
+</body>
+</html>
