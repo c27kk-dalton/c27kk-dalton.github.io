@@ -14,6 +14,7 @@
 <script>
 	function setup() {
 		createCanvas(2000, 2000);
+		noLoop()
 	}
 
 function draw() {
@@ -22,11 +23,24 @@ function draw() {
 		for(let j = 0; j < 11; j++) {
 			let x = i * 100
 			let y = j * 100
+
+let d = dist(x, y, mouseX, mouseY)
+if(random() < 0.5) {
+	fill("burlywood")
+} else {
+	fill("white")
+}
 		circle(x ,y, 100)
 		circle(x-30, y-50, 30)
 		circle(x+30, y-50, 30)
 		arc(x,y, 50, 50, 0, PI)
+
+	if (d < 50) {
+		arc(x,y-20, 50, 50, 0,PI)
+		} else {
+			arc(x,y, 50, 50, 0, PI)
 		}
+	}
 	}
 }
 </script>
