@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NBA Randomizer</title>
+
+<style>
+	body{
+		background: lightgray;
+		font-family: Arial;
+		text-align: center;
+	}
+
+	#top{
+		font-size: 30px;
+		margin: 20px;
+	}
+
+	.row{
+		margin: 10px;
+		font-size: 22px;
+	}
+
+	button{
+		margin-top: 20px;
+		padding: 10px;
+		font-size: 18px;
+	}
+</style>
+</head>
+
+<body>
+
+<div id="top">
+	<img id="logo" width="80">
+	<div id="number"></div>
+</div>
+
+<div class="row" id="height">Height: </div>
+<div class="row" id="shooting">Shooting: </div>
+<div class="row" id="dribbling">Dribbling: </div>
+<div class="row" id="defense">Defense: </div>
+<div class="row" id="rebounding">Rebounding: </div>
+<div class="row" id="athleticism">Athleticism: </div>
+<div class="row" id="finishing">Finishing: </div>
+<div class="row" id="passing">Passing: </div>
+<div class="row" id="iq">IQ: </div>
+<div class="row" id="leadership">Leadership: </div>
+
+<button id="btn">Randomize Player</button>
+
+<script>
+
+let heights = []
+
+for(let i = 72; i <= 86; i++){
+	let feet = Math.floor(i / 12)
+	let inches = i % 12
+	heights.push(feet + "'" + inches)
+}
+
+let players = [
+"LeBron James", "Stephen Curry", "Kevin Durant",
+"Giannis Antetokounmpo", "Luka Doncic",
+"Jayson Tatum", "Joel Embiid", "Nikola Jokic",
+"Devin Booker", "Ja Morant", "Wemby", "Cade Cunningham", "Semi Ojeleye", "Jaylen Brown", 
+"Luka Doncic", "Precious Achiuwa", "Steven Adams", "Bam Adebayo", "Santi Aldama", "Jarrett Allen", "OG Anunoby", "Jalen Brunson", "KAT", "Lamelo Ball", "Paolo Banchero", "Scottie Barnes", "Anthony Black", "Mikal Bridges", "Jimmy Butler", "Stephon Castle", 
+]
+
+let teams = [
+{logo:"https://a.espncdn.com/i/teamlogos/nba/500/lal.png"},
+{logo:"https://a.espncdn.com/i/teamlogos/nba/500/bos.png"},
+{logo:"https://a.espncdn.com/i/teamlogos/nba/500/gsw.png"},
+{logo:"https://a.espncdn.com/i/teamlogos/nba/500/mil.png"},
+{logo:"https://a.espncdn.com/i/teamlogos/nba/500/dal.png"},
+{logo:"https://a.espncdn.com/i/teamlogos/nba/500/nyk.png"}
+]
+
+function pick(arr){
+	return arr[Math.floor(Math.random() * arr.length)]
+}
+
+document.getElementById("btn").addEventListener("click", function(){
+
+	// top info
+	let team = pick(teams)
+	document.getElementById("logo").src = team.logo
+
+	document.getElementById("number").innerHTML =
+	"#" + Math.floor(Math.random() * 100)
+
+	// stats
+	document.getElementById("height").innerHTML = "Height: " + pick(heights)
+	document.getElementById("shooting").innerHTML = "Shooting: " + pick(players)
+	document.getElementById("dribbling").innerHTML = "Dribbling: " + pick(players)
+	document.getElementById("defense").innerHTML = "Defense: " + pick(players)
+	document.getElementById("rebounding").innerHTML = "Rebounding: " + pick(players)
+	document.getElementById("athleticism").innerHTML = "Athleticism: " + pick(players)
+	document.getElementById("finishing").innerHTML = "Finishing: " + pick(players)
+	document.getElementById("passing").innerHTML = "Passing: " + pick(players)
+	document.getElementById("iq").innerHTML = "IQ: " + pick(players)
+	document.getElementById("leadership").innerHTML = "Leadership: " + pick(players)
+
+})
+
+</script>
+
+</body>
+</html>
